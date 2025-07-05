@@ -35,8 +35,8 @@ Course: *Computer Organization & Assembly Language*
 
 ## Development Tools
 
-- 💻 **Assembler**: [EMU8086 Emulator]
-- 🔎 **Debugger**: Built-in EMU8086 debugger
+- **Assembler**: [EMU8086 Emulator]
+- **Debugger**: Built-in EMU8086 debugger
 
 ---
 
