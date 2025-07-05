@@ -25,45 +25,30 @@
       
     ; Splash Banner for the Bank Management System
         
-    bank_sys_ban_1 db '    ____                 __      _____               __$'                 
-    bank_sys_ban_2 db '   / __ ) ____ _ ____   / /__   / ___/ __  __ _____ / /_ ___   ____ ___$' 
-    bank_sys_ban_3 db '  / __  |/ __ `// __ \ / //_/   \__ \ / / / // ___// __// _ \ / __ `__ \$'
-    bank_sys_ban_4 db ' / /_/ // /_/ // / / // ,<     ___/ // /_/ /(__  )/ /_ /  __// / / / / /$'
-    bank_sys_ban_5 db '/_____/ \__,_//_/ /_//_/|_|   /____/ \__, //____/ \__/ \___//_/ /_/ /_/$' 
-    bank_sys_ban_6 db '                                    /____/$'                                                                                                                                               
+    bank_sys_ban_1 db '||                       ||$'  
+    bank_sys_ban_2 db '||  BANKING SYSTEM v5.0  ||$'  
+    bank_sys_ban_3 db '||                       ||$'                                                                                                                                                                                
     
     ; Decorative Banners for Each Option
-    op1mmsg1 db '   ______                    __$'      
-    op1mmsg2 db '  / ____/_____ ___   ____ _ / /_ ___$' 
-    op1mmsg3 db ' / /    / ___// _ \ / __ `// __// _ \$'
-    op1mmsg4 db '/ /___ / /   /  __// /_/ // /_ /  __/$'
-    op1mmsg5 db '\____//_/    \___/ \__,_/ \__/ \___/$'  
+    op1mmsg1 db '||            ||$'  
+    op1mmsg2 db '||  CREATE    ||$'  
+    op1mmsg3 db '||            ||$'  
     
-    op2mmsg1 db  '  ____         __          _  __$'     
-    op2mmsg2 db '  / __ \ ___   / /_ ____ _ (_)/ /_____$'
-    op2mmsg3 db ' / / / // _ \ / __// __ `// // // ___/$'
-    op2mmsg4 db '/ /_/ //  __// /_ / /_/ // // /(__  )$' 
-    op2mmsg5 db '/_____/ \___/ \__/ \__,_//_//_//____/$'
+    op2mmsg1 db '||            ||$'  
+    op2mmsg2 db '||  DETAILS   ||$'  
+    op2mmsg3 db '||            ||$'
     
-    op3mmsg1 db ' _       __ _  __   __         __$'                      
-    op3mmsg2 db '| |     / /(_)/ /_ / /_   ____/ /_____ ____ _ _      __$'
-    op3mmsg3 db '| | /| / // // __// __ \ / __  // ___// __ `/| | /| / /$'
-    op3mmsg4 db '| |/ |/ // // /_ / / / // /_/ // /   / /_/ / | |/ |/ /$' 
-    op3mmsg5 db '|__/|__//_/ \__//_/ /_/ \__,_//_/    \__,_/  |__/|__/$'  
+    op3mmsg1 db '||            ||$'  
+    op3mmsg2 db '||  WITHDRAW  ||$'  
+    op3mmsg3 db '||            ||$'  
                                                          
-    op4mmsg1 db '    ____                             _  __ $'
-    op4mmsg2 db '   / __ \ ___   ____   ____   _____ (_)/ /_$'
-    op4mmsg3 db '  / / / // _ \ / __ \ / __ \ / ___// // __/$'
-    op4mmsg4 db ' / /_/ //  __// /_/ // /_/ /(__  )/ // /_$'  
-    op4mmsg5 db '/_____/ \___// .___/ \____//____//_/ \__/$'  
-    op4mmsg6 db '            /_/$'                                                               
+    op4mmsg1 db '||            ||$'  
+    op4mmsg2 db '||  DEPOSIT   ||$'  
+    op4mmsg3 db '||            ||$'                                                                          
     
-    op5mmsg1 db '    __  ___            __ _  ____$'      
-    op5mmsg2 db '   /  |/  /____   ____/ /(_)/ __/__  __$'
-    op5mmsg3 db '  / /|_/ // __ \ / __  // // /_ / / / /$'
-    op5mmsg4 db ' / /  / // /_/ // /_/ // // __// /_/ /$' 
-    op5mmsg5 db '/_/  /_/ \____/ \__,_//_//_/   \__, /$'  
-    op5mmsg6 db '                              /____/$'
+    op5mmsg1 db '||            ||$'  
+    op5mmsg2 db '||  MODIFY    ||$'  
+    op5mmsg3 db '||            ||$'
     
     op0mmsg0 db 'Thank you for utilizing our banking system, see you again!$'
 
@@ -129,13 +114,14 @@
 
 ; ------------------------ Code Segment ------------------------  
 
-.code
+.code   
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;                             U T I L S                             ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;------------------------                                                                   
+
+;  U T I L S            
+                
+;------------------------                                                                     
+
 
 ; Procedure: Wait for "Enter" Key
 ; Description: Pauses execution until the user presses the "Enter" key.
@@ -323,15 +309,9 @@ getPinInput proc
 getPinInput endp
 
 ; ----------------------------------------------------------------------------
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;                        M E N U   SYSTEM                           ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
+                                                         
+;    M E N U   SYSTEM  
+                                                                  
 ; ----------------------------------------------------------------------------
 
 ; Procedure: Display Menu
@@ -349,14 +329,7 @@ DisplayMenu proc near
     printString bank_sys_ban_3
     call newLine
          
-    printString bank_sys_ban_4
-    call newLine
-    
-    printString bank_sys_ban_5
-    call newLine
-    
-    printString bank_sys_ban_6
-    call newLine     
+ 
     
     ; Print menu options
     call newLine 
@@ -401,17 +374,11 @@ GetInputMenuSystem proc near
          
 GetInputMenuSystem endp
 
-; ----------------------------------------------------------------------------
+; ---------------------------------------------------
+                                                                   
+;  1: CREATE ACCOUNT                                                                                    
 
- 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;               O P T I O N  1   => CREATE ACCOUNT                  ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-; ----------------------------------------------------------------------------
+; ---------------------------------------------------
 
 ; Macro: Input String for Account Name
 ; Description: Reads a string input from the user and stores it in a variable.
@@ -500,13 +467,6 @@ option_1_prog proc
     printString op1mmsg3
     call newLine
     
-    printString op1mmsg4
-    call newLine  
-         
-    printString op1mmsg5
-    call newLine
-    
-    call newLine
     call newLine
     
     ; Input Account Name
@@ -534,17 +494,11 @@ option_1_prog proc
     
 option_1_prog endp
 
-; ---------------------------------------------------------------------------- 
-
- 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;               O P T I O N  2   => PRINT DETAILS                   ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-
-
-; ----------------------------------------------------------------------------           
+; ----------------------------
+                                                                   
+;   2:  DETAILS                 
+                                                      
+; ----------------------------        
 
 ; Procedure: enter_to_continue_prog_2
 ; Logic: Ensures the user acknowledges the end of the process by pressing "Enter" 
@@ -592,12 +546,7 @@ option_2_prog proc
     
     printString op2mmsg3       ; Line 3 of the banner
     call newLine  
-    
-    printString op2mmsg4       ; Line 4 of the banner
-    call newLine
-    
-    printString op2mmsg5       ; Line 5 of the banner
-    call newLine
+  
     call newLine              ; Additional spacing for readability
     
   
@@ -634,17 +583,11 @@ option_2_prog proc
   
 option_2_prog endp 
 
-; ---------------------------------------------------------------------------- 
+; --------------------------------------
+                                                                
+;  3:  WIDTHDRAW           
 
- 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;               O P T I O N  3   => WIDTHDRAW MONEY                 ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-; ---------------------------------------------------------------------------- 
+; --------------------------------------
             
 ; Procedure: enter_to_continue_prog_3
 ; Logic: Ensures the user presses "Enter" before returning to the main menu,
@@ -692,10 +635,6 @@ option_3_prog proc
     printString op3mmsg3       ; Line 3 of the banner
     call newLine
     
-    printString op3mmsg4       ; Line 4 of the banner
-    call newLine
-    
-    printString op3mmsg5       ; Line 5 of the banner
     
     call newLine
     call newLine
@@ -783,17 +722,11 @@ option_3_prog proc
 
 option_3_prog endp 
 
-; ----------------------------------------------------------------------------
+; ------------------------
 
- 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;               O P T I O N  4   => DEPOSIT MONEY                   ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;            
-
-
-; ----------------------------------------------------------------------------
+; 4: DEPOSIT                  
+           
+; ------------------------
 
 ; Procedure: enter_to_continue_prog_4
 ; Logic: Ensures the user presses "Enter" before returning to the main menu 
@@ -859,11 +792,7 @@ option_4_prog proc
     printString op4mmsg3       ; Line 3 of the banner
     call newLine  
     
-    printString op4mmsg4       ; Line 4 of the banner
-    call newLine  
-    
-    printString op4mmsg5       ; Line 5 of the banner
-    call newLine
+
     call newLine
   
   ; Display Deposit Options
@@ -918,13 +847,7 @@ option_4_prog endp
 
 ; ----------------------------------------------------------------------------
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;               O P T I O N  5   => RESET ACCOUNT                   ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;  5: RESET ACCOUNT                  
 
 ; ----------------------------------------------------------------------------
 
@@ -1000,17 +923,11 @@ option_5_prog proc
     
 option_5_prog endp
 
-; ----------------------------------------------------------------------------
+; ------------------------------
 
+; 6: MODIFY DETAILS         
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;               O P T I O N  6   => MODIFY ACCOUNT DETAILS          ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-
-
-; ----------------------------------------------------------------------------
+; ------------------------------
 
 ; Procedure: enter_to_continue_prog_6
 ; Logic: Ensures the user acknowledges the completion of account modification
@@ -1106,11 +1023,7 @@ option_6_prog proc
     printString op5mmsg3       ; Line 3 of the banner
     call newLine 
     
-    printString op5mmsg4       ; Line 4 of the banner
-    call newLine  
-    
-    printString op5mmsg5       ; Line 5 of the banner
-    call newLine
+
     call newLine
   
   ; Prompt for New Account Name
@@ -1145,17 +1058,11 @@ option_6_prog proc
    
 option_6_prog endp
 
-; ---------------------------------------------------------------------------- 
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
-;                                                                   ;
-;                     E N T R Y    P O I N T                        ;
-;                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-; ----------------------------------------------------------------------------
+; ---------------------------
+                                                                   
+;   E N T R Y    P O I N T   
+                                                                
+; ---------------------------
 
 ; Entry Point: Main
 ; Logic: The central loop of the program, repeatedly displaying the menu and 
@@ -1221,4 +1128,4 @@ MainProgramExecution proc
 
 end MainProgramExecution                      ; Program ends at the main entry point
 
-; ----------------------------------------------------------------------------
+; -------------
